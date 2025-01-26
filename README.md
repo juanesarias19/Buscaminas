@@ -1,8 +1,6 @@
 # Buscaminas
 # Proyecto de programación sobre el desarrollo de un Buscaminas 
 
-El grupo Stravanzza presenta el primer avance de su proyecto, el desarrollo de un Buscaminas en python.
-
 ---
 #### Integrantes del grupo
 
@@ -17,9 +15,18 @@ C.C 1031651244
 saaguilar@unal.edu.co
 ---
 
+### 📌 Objetivo
+El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistr de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
+
+
+### 📌 Objetivo del avance
+Demostrar el progreso que se ha tenido en el desarrollo del juego, así como los mayores problemas presentados
+
+---
+
 <table cellspacing="1" bgcolor="">
 	<tr bgcolor="#252582">
-		<th><b>Buscaminas: ¿Qué es?</b></th>
+		<th><b>Buscaminas: ¿Qué es un Buscaminas?</b></th>
 	</tr>
 	<tr bgcolor="#e4e4ed">
 		<td style="color:#141414"> 
@@ -34,14 +41,37 @@ saaguilar@unal.edu.co
 
 
 ### ¿Como se abordo la solucion de crear un buscaminas en python?
-Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, en estas se encuentran las minas. 
+Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
 
 <p align="center">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2uE_vmb6-A35XfltEbnAQyrvBcCbxBP3Y4A&amp;s" height="180">
   <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180">
 </p>
 
-El sentido del juego es que el jugador no sabe las posciones de las minas, asi que tiene que ir ingresando posiciones para ir descubriendo las minas, a medida que avanza si se situa en una mina, el jugador pierde, si se situa en un lugar donde no hay minas se deben descubrir la cercania de las otras minas, es decir, en la cuadricula deben aparecer al rededor de la mina unos numeros que indican la cercania de la misma, es decir, si es 1 hay 1 mina al rededor (al rededor comprende la posicion de abajo, arriba, izquierda, derecha y diagonales), asi sucesivamente si aparecen numeros como el 2 o el 3 que corresponden a la cantidad de minas.
+
+Para facilitar la creación del juego se elaboró un diagrama con la proceso basico del buscaminas
+
+```mermaid
+flowchart TD
+    n1["Leer Rango"] --> n2["Leer Numero de minas"]
+    n2 --> A["Generar Matriz de tablero"]
+    A --> B("Colocar minas aleatoriamente")
+    B --> n3["Descubir casilla"]
+    n3 --> C{"¿Es una mina?"}
+    C -- No --> n4["Mostrar numero de minas vecinas"]
+    C -- Si --> n5["Perdiste"]
+    n6["¿Hay casillas libres?"] -- No --> n10["Ganaste"]
+    n11(["Inicio"]) --> n1
+    n10 --> n12["¿Volver a jugar?"]
+    n5 --> n12
+    n6 --> n3
+    n4 --> n6
+    n12 -- Si --> n1
+    n12 -- No --> n13(["Fin"])
+    n1@{ shape: lean-r}
+    n2@{ shape: lean-r}
+
+```
 
 
 
