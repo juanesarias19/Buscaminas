@@ -9,7 +9,9 @@ El grupo Stravanzza presenta el primer avance de su proyecto, el desarrollo de u
 * Juan Esteban Arias Lozano
 C.C 1011095584
 juariaslo@unal.edu.co
-
+* Miguel Angel Moreno Alvarez
+C.C 1072423634
+migmorenoal@unal.edu.co
 ---
 
 <table cellspacing="1" bgcolor="">
