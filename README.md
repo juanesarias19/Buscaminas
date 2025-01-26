@@ -12,6 +12,9 @@ juariaslo@unal.edu.co
 * Miguel Angel Moreno Alvarez
 C.C 1072423634
 migmorenoal@unal.edu.co
+* Santiago Aldemar Aguilar Riveros
+C.C 1031651244
+saaguilar@unal.edu.co
 ---
 
 <table cellspacing="1" bgcolor="">
