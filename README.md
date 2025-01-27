@@ -14,6 +14,8 @@ migmorenoal@unal.edu.co
 C.C 1031651244
 saaguilar@unal.edu.co
 ---
+## Definición de la Alternativa
+
 
 ### 📌 Objetivo
 El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistr de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
@@ -39,17 +41,10 @@ Demostrar el progreso que se ha tenido en el desarrollo del juego, así como los
   </tr>
 </table>
 
-
-### ¿Como se abordo la solucion de crear un buscaminas en python?
-Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
-
-<p align="center">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2uE_vmb6-A35XfltEbnAQyrvBcCbxBP3Y4A&amp;s" height="180">
-  <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180">
-</p>
+## Diagrama Preliminar
 
 
-Para facilitar la creación del juego se elaboró un diagrama con la proceso basico del buscaminas
+Para describir el proceso y facilitar el desarrollo del algoritmo se optó por realizar un diagra de flujo que resume el funcionamiento básico del juego, desde el inicio, determinar si se gana o pierde, o el resultado de una casilla vacía. 
 
 ```mermaid
 flowchart TD
@@ -72,6 +67,18 @@ flowchart TD
     n2@{ shape: lean-r}
 
 ```
+
+
+### ¿Como se abordo la solucion de crear un buscaminas en python?
+Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
+
+<p align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2uE_vmb6-A35XfltEbnAQyrvBcCbxBP3Y4A&amp;s" height="180">
+  <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180">
+</p>
+
+
+
 
 
 
