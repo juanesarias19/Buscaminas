@@ -67,7 +67,16 @@ flowchart TD
     n2@{ shape: lean-r}
 
 ```
-
+📌 2. Mecánica de Juego
+Tablero generado dinámicamente (Ejemplo: 10x10 con 15 minas).
+Pistas numéricas basadas en minas cercanas.
+Eventos de clic para revelar casillas.
+Fin del juego si se descubre una mina o si se despeja el tablero sin errores.
+📌 3. Posibles Desafíos
+Lógica para la expansión de casillas vacías al hacer clic.
+Gestión de eventos y actualizaciones gráficas en la interfaz.
+Validación de condiciones de victoria y derrota
+mañana termino esto, i swear
 
 ### ¿Como se abordo la solucion de crear un buscaminas en python?
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
