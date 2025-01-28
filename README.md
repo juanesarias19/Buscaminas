@@ -18,11 +18,11 @@ saaguilar@unal.edu.co
 
 
 ### 📌 Objetivo
-El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistr de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
+El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistir de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
 
 
 ### 📌 Objetivo del avance
-Demostrar el progreso que se ha tenido en el desarrollo del juego, así como los mayores problemas presentados
+El avance del proyecto tiene como objetivo principal asegurar un desarrollo estructurado y eficiente, comenzando con una planeación detallada que establece los pasos necesarios para alcanzar la meta propuesta. Actualmente, se ha trabajado en la creación de la interfaz y la implementación de las funciones básicas, priorizando un diseño intuitivo y funcional que facilite la experiencia del usuario. Durante el desarrollo, se han identificado diversos obstáculos y dificultades, tales como la integración de ciertos componentes, los cuales requieren un enfoque más profundo para garantizar la estabilidad y eficiencia del sistema.
 
 ---
 
