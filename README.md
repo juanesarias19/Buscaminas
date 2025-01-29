@@ -67,7 +67,8 @@ flowchart TD
     n2@{ shape: lean-r}
 
 ```
-###📌 2. Mecánica de Juego
+### 📌 2. Mecánica de Juego
+
 El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
 
 Mecánica de juego:
@@ -79,7 +80,8 @@ Si está vacía, revela un área de casillas vacías cercanas.
 Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
 Victoria: Ganas si descubres todas las casillas sin minas.
 
-###📌 3. Posibles Desafíos
+### 📌 3. Posibles Desafíos
+
 Lógica para la expansión de casillas vacías al hacer clic.
 Gestión de eventos y actualizaciones gráficas en la interfaz.
 Validación de condiciones de victoria y derrota
