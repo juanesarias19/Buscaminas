@@ -316,7 +316,7 @@ while True:
 ```
 
 
-**Nota:**Esto es solo un avance del proyecto, este se encuentra anexado al principio del repositorio
+**Nota:** Esto es solo un avance del proyecto, este se encuentra anexado al principio del repositorio
 
 
 
