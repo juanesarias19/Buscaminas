@@ -43,7 +43,7 @@ El avance del proyecto tiene como objetivo principal asegurar un desarrollo estr
 
 ## Diagrama preliminar
 
-Para describir el proceso y facilitar el desarrollo del algoritmo se optó por realizar un diagra de flujo que resume el funcionamiento básico del juego, desde el inicio, determinar si se gana o pierde, o el resultado de una casilla vacía. 
+Para describir el proceso y facilitar el desarrollo del algoritmo se optó por realizar un diagrama de flujo que resume el funcionamiento básico del juego, desde el inicio, determinar si se gana o pierde, o el resultado de una casilla vacía. 
 
 <details><summary>Diagrama de flujo </summary><p>
 
