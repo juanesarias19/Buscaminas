@@ -73,7 +73,17 @@ El Buscaminas es un juego de lógica en el que debes descubrir todas las casilla
 
 Mecánica de juego:
 - Tablero y casillas: Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.
+
+— Creamos el tablero con una matriz, con la posibilidad de modificar el rango del tablero
+
+— Añadimos Un random para minas aleatorias en la matriz
+
 - Clic inicial: Al hacer clic en una casilla, puede ocurrir una de tres cosas:
+  	— Para ejecución en consola teníamos dos opciones
+		*Una posición y desplazarnos por el tablero
+		*Coordenadas para ubicar las posiciones
+
+
 - Si es una mina, pierdes la partida.
 - Si es un número, indica cuántas minas hay en las casillas adyacentes.
 - Si está vacía, revela un área de casillas vacías cercanas.
@@ -85,7 +95,8 @@ Mecánica de juego:
 Lógica para la expansión de casillas vacías al hacer clic.
 Gestión de eventos y actualizaciones gráficas en la interfaz.
 Validación de condiciones de victoria y derrota
-
+Programacion del Temporizador
+Conteo de puntaje
 
 ### ¿Como se abordo la solucion de crear un buscaminas en python?
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
