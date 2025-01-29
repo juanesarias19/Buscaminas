@@ -71,24 +71,48 @@ flowchart TD
 
 El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
 
-Mecánica de juego:
-- Tablero y casillas: Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.
 
-— Creamos el tablero con una matriz, con la posibilidad de modificar el rango del tablero
+<details><summary>Tablero y casillas</summary><p>
 
-— Añadimos Un random para minas aleatorias en la matriz
+— Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.
 
-- Clic inicial: Al hacer clic en una casilla, puede ocurrir una de tres cosas:
-  	— Para ejecución en consola teníamos dos opciones
-		*Una posición y desplazarnos por el tablero
-		*Coordenadas para ubicar las posiciones
+* Creamos el tablero con una matriz, con la posibilidad de modificar el rango del tablero
+
+* Añadimos Un random para minas aleatorias en la matriz
+
+  ![image](https://github.com/user-attachments/assets/efe6fb7e-a773-489a-bda7-a7cdb0e43129)
 
 
-- Si es una mina, pierdes la partida.
-- Si es un número, indica cuántas minas hay en las casillas adyacentes.
-- Si está vacía, revela un área de casillas vacías cercanas.
-- Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
-- Victoria: Ganas si descubres todas las casillas sin minas.
+</p></details><br>
+<details><summary>Clic inicial</summary><p>
+
+Al hacer clic en una casilla, puede ocurrir una de dos cosas:
+
+— Para ejecución en consola teníamos dos opciones
+
+  * Inciar en una posición y desplazarnos por el tablero
+  * Coordenadas para ubicar las posiciones
+</p></details><br>
+
+</p></details><br>
+<details><summary>Descubrir casilla</summary><p>
+
+* ###  Casilla vacía, indica cuántas minas hay en las casillas adyacentes.
+
+![Captura de pantalla 2025-01-29 103402](https://github.com/user-attachments/assets/ffa89a63-5e62-4d47-aa5c-a035ee9f7f3e)
+
+* ###  Mina, pierdes la partida.
+
+![image](https://github.com/user-attachments/assets/4aecdb59-3e90-4d8f-9a46-704854a35dad)
+
+</p></details><br>
+▶ Casilla vacía, indica cuántas minas hay en las casillas adyacentes.
+
+▶ Mina, pierdes la partida.
+
+▶ Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
+
+▶ Victoria: Ganas si descubres todas las casillas sin minas.
 
 ### 📌 3. Posibles Desafíos
 
