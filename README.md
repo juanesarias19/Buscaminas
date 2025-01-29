@@ -14,14 +14,14 @@ migmorenoal@unal.edu.co
 C.C 1031651244
 saaguilar@unal.edu.co
 ---
-## Definición de la Alternativa
+# Definición de la Alternativa
 
 
-### 📌 Objetivo
+## 📌 Objetivo
 El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistir de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
 
 
-### 📌 Objetivo del avance
+## 📌 Objetivo del avance
 El avance del proyecto tiene como objetivo principal asegurar un desarrollo estructurado y eficiente, comenzando con una planeación detallada que establece los pasos necesarios para alcanzar la meta propuesta. Actualmente, se ha trabajado en la creación de la interfaz y la implementación de las funciones básicas, priorizando un diseño intuitivo y funcional que facilite la experiencia del usuario. Durante el desarrollo, se han identificado diversos obstáculos y dificultades, tales como la integración de ciertos componentes, los cuales requieren un enfoque más profundo para garantizar la funcionalidad del sistema.
 
 ---
@@ -41,10 +41,11 @@ El avance del proyecto tiene como objetivo principal asegurar un desarrollo estr
   </tr>
 </table>
 
-## Diagrama Preliminar
-
+## Diagrama preliminar
 
 Para describir el proceso y facilitar el desarrollo del algoritmo se optó por realizar un diagra de flujo que resume el funcionamiento básico del juego, desde el inicio, determinar si se gana o pierde, o el resultado de una casilla vacía. 
+
+<details><summary>Diagrama de flujo </summary><p>
 
 ```mermaid
 flowchart TD
@@ -67,34 +68,36 @@ flowchart TD
     n2@{ shape: lean-r}
 
 ```
-### 📌 2. Mecánica de Juego
+</p></details><br>
+
+
+## 📌 2. Mecánica de Juego
 
 El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
 
 
-<details><summary>Tablero y casillas</summary><p>
-
-— Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.
+<details><summary>Tablero y casillas: Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.</summary><p>
 
 * Creamos el tablero con una matriz, con la posibilidad de modificar el rango del tablero
-
-* Añadimos Un random para minas aleatorias en la matriz
 
   ![image](https://github.com/user-attachments/assets/efe6fb7e-a773-489a-bda7-a7cdb0e43129)
 
 
+* Añadimos Un random para minas aleatorias en la matriz
+
+
 </p></details><br>
-<details><summary>Clic inicial</summary><p>
+<details><summary>Clic inicial: Al hacer clic en una casilla, puede ocurrir una de dos cosas:</summary><p>
 
-Al hacer clic en una casilla, puede ocurrir una de dos cosas:
-
-— Para ejecución en consola teníamos dos opciones
+— Para ejecución en consola se tenían dos opciones
 
   * Inciar en una posición y desplazarnos por el tablero
   * Coordenadas para ubicar las posiciones
-</p></details><br>
+
+![image](https://github.com/user-attachments/assets/6cfb66be-fbab-4bdf-9f7f-1fe65cded9c0)
 
 </p></details><br>
+
 <details><summary>Descubrir casilla</summary><p>
 
 * ###  Casilla vacía, indica cuántas minas hay en las casillas adyacentes.
@@ -106,33 +109,42 @@ Al hacer clic en una casilla, puede ocurrir una de dos cosas:
 ![image](https://github.com/user-attachments/assets/4aecdb59-3e90-4d8f-9a46-704854a35dad)
 
 </p></details><br>
-▶ Casilla vacía, indica cuántas minas hay en las casillas adyacentes.
-
-▶ Mina, pierdes la partida.
 
 ▶ Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
 
 ▶ Victoria: Ganas si descubres todas las casillas sin minas.
 
-### 📌 3. Posibles Desafíos
+## 📌 3. Posibles Desafíos
 
-Lógica para la expansión de casillas vacías al hacer clic.
-Gestión de eventos y actualizaciones gráficas en la interfaz.
-Validación de condiciones de victoria y derrota
-Programacion del Temporizador
-Conteo de puntaje
+En la planeación y la realización parcial del proyecto, fueron hallados y pensados algunos obstaculos y desafios, que podrían llegar a requerir más esfuerzo o atención en el futuro, tales como:
+* Lógica para la expansión de casillas vacías al hacer clic.
+* Gestión de eventos y actualizaciones gráficas en la interfaz.
+* Validación de condiciones de victoria y derrota
+* Programacion del Temporizador
+* Conteo de puntaje
 
-### ¿Como se abordo la solucion de crear un buscaminas en python?
+## ¿Como se abordo la solucion de crear un buscaminas en python?
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
 
 <p align="center">
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2uE_vmb6-A35XfltEbnAQyrvBcCbxBP3Y4A&amp;s" height="180">
-  <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180">
+  <img src="https://github.com/user-attachments/assets/6cfb66be-fbab-4bdf-9f7f-1fe65cded9c0" alt="image" height="180">
+  <!-- <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180"> -->
 </p>
-Entonces se diseño un programa en python que fuera el equivalente a jugar un buscaminas, para detallar el avance del proyecto es necesario ver el programa en un interprete de python. A continuacion se muestra el resultado ( hasta el momento ) del programa ejecutado en consola.
-<p align="center">
-  <img src="buscaminascorrido.png">
-</p>	
+
+Para la ubicación de minas fue necesario importar una funcion de la biblioteca `NumPy`
+
+```
+import numpy as np
+
+# Obtener índices aleatorios para colocar las minas
+    indices = np.random.choice(tamano * tamano, minas, replace=False)
+```
+
+_`replace=False` indica que no se deben seleccionar índices repetidos. Esto Esto garantiza que solo puede existir una mina por celda._
+
+
+
 
 
 
