@@ -67,12 +67,19 @@ flowchart TD
     n2@{ shape: lean-r}
 
 ```
-📌 2. Mecánica de Juego
-Tablero generado dinámicamente (Ejemplo: 10x10 con 15 minas).
-Pistas numéricas basadas en minas cercanas.
-Eventos de clic para revelar casillas.
-Fin del juego si se descubre una mina o si se despeja el tablero sin errores.
-📌 3. Posibles Desafíos
+###📌 2. Mecánica de Juego
+El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
+
+Mecánica de juego:
+Tablero y casillas: Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.
+Clic inicial: Al hacer clic en una casilla, puede ocurrir una de tres cosas:
+Si es una mina, pierdes la partida.
+Si es un número, indica cuántas minas hay en las casillas adyacentes.
+Si está vacía, revela un área de casillas vacías cercanas.
+Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
+Victoria: Ganas si descubres todas las casillas sin minas.
+
+###📌 3. Posibles Desafíos
 Lógica para la expansión de casillas vacías al hacer clic.
 Gestión de eventos y actualizaciones gráficas en la interfaz.
 Validación de condiciones de victoria y derrota
