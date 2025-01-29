@@ -95,7 +95,10 @@ Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona c
   <img src="https://play-lh.googleusercontent.com/eX5S3Tv3eSO1aWDMQ7MGRO1AaZM-mF0EvRbNsUM887kJVHj0aKv4GnDNj6ds_qvhpak" height="180">
 </p>
 Entonces se diseño un programa en python que fuera el equivalente a jugar un buscaminas, para detallar el avance del proyecto es necesario ver el programa en un interprete de python. A continuacion se muestra el resultado ( hasta el momento ) del programa ejecutado en consola.
-<img src=" https://github.com/user-attachments/assets/b6f53e91-011a-4526-8247-72d796fd563a" height="180">
+![texto alternativo](images/buscaminascorrido.png)
+
+
+
 
 
 
