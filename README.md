@@ -87,7 +87,7 @@ El Buscaminas es un juego de lógica en el que debes descubrir todas las casilla
 
 
 </p></details><br>
-<details><summary>Clic inicial:</summary><p>
+<details><summary>Iniciar partida: primer casilla </summary><p>
 
 — Para ejecución en consola se tenían dos opciones
 
