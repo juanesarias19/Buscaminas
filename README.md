@@ -85,7 +85,7 @@ Mecánica de juego:
 Lógica para la expansión de casillas vacías al hacer clic.
 Gestión de eventos y actualizaciones gráficas en la interfaz.
 Validación de condiciones de victoria y derrota
-mañana termino esto, i swear
+
 
 ### ¿Como se abordo la solucion de crear un buscaminas en python?
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
