@@ -5,15 +5,11 @@
 #### Integrantes del grupo
 
 * Juan Esteban Arias Lozano
-C.C 1011095584
-juariaslo@unal.edu.co
+
 * Miguel Angel Moreno Alvarez
-C.C 1072423634
-migmorenoal@unal.edu.co
+
 * Santiago Aldemar Aguilar Riveros
-C.C 1031651244
-saaguilar@unal.edu.co
----
+
 # Definición de la Alternativa
 
 
