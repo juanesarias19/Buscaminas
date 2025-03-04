@@ -123,6 +123,9 @@ Primero, se identificaron los requisitos básicos del juego de Buscaminas:
 
 * **Puntuación:** Un sistema de puntuación basado en el tiempo y el número de minas.
 
+---
+---
+
 ### 2. Diseño de la Solución
 
 <details><summary> Diagrama de flujo del funcionamiento </summary><p>
@@ -132,6 +135,7 @@ Primero, se identificaron los requisitos básicos del juego de Buscaminas:
 </p></details><br>  
 
 **Estructura del tablero**
+
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
 
 <p align="center">
@@ -170,6 +174,8 @@ La base del codigo consiste en crear una matriz base a las minas asignamos el va
 # Obtener ubicación aleatoria para colocar las minas usando random.sample
     indices = random.sample(range(tamano * tamano), minas) #Son numeros aleatorios que dterminan las posiciones de las minas 
 ```
+
+___
 
 **Interfaz de Usuario**
 * Se diseñó una interfaz de texto para la consola.
@@ -298,6 +304,7 @@ Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde 
 
 </p></details><br>  
  
+___
 
 **Lógica del Juego**
 * Se implementó una *función recursiva* `despejar_casilla` para despejar casillas vacías y sus adyacentes automáticamente.
@@ -376,6 +383,8 @@ ganado = True
 ```
 </p></details><br>  
 
+---
+---
 
 ### 3. Implementación
 El código se construyó en Python utilizando algunas de las siguientes herramientas y técnicas:
