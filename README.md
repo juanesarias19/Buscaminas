@@ -246,7 +246,7 @@ def mostrar_instrucciones():
 
 * Se utilizaron coordenadas (letras para columnas y números para filas) para que el usuario seleccione casillas.
 
-![image](https://github.com/user-attachments/assets/1d47fefc-b430-45b2-9837-923260ab2abf)
+  ![image](https://github.com/user-attachments/assets/1d47fefc-b430-45b2-9837-923260ab2abf)
 
 <details><summary> Codigo </summary><p>
 
@@ -276,7 +276,7 @@ Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde 
 
 * Se implementó un sistema para marcar casillas como minas usando el formato M A1.
 
-![image](https://github.com/user-attachments/assets/d4bcfb5e-6aac-4820-b9b2-70f45324d1cf)
+  ![image](https://github.com/user-attachments/assets/d4bcfb5e-6aac-4820-b9b2-70f45324d1cf)
 
 <details><summary> Codigo </summary><p>
 
@@ -376,129 +376,6 @@ ganado = True
 ```
 </p></details><br>  
 
-Para contar las minas adyacentes usamos la siguiente función
-
-```
-def contar_minas_alrededor(matriz, fila, columna):
-    #Cuenta el número de minas alrededor de una posición dada.
-    filas = len(matriz)
-    columnas = len(matriz[0])
-    minas_cerca = 0
-
-    # Recorrer las posiciones vecinas
-    for i in range(max(0, fila - 1), min(filas, fila + 2)):
-        for j in range(max(0, columna - 1), min(columnas, columna + 2)):
-            if (i, j) != (fila, columna) and matriz[i][j] == 1:
-                minas_cerca += 1
-    return minas_cerca
-```
-Para hacer las actualizaciones del tablero se utiliza la siguiente funcion basada en la de la interafz del juego:
-
-```
-    def mostrar_tablero_actualizado(matriz, fila, columna):
-# Tiene la misma estructura de la funcion tablerito, es para ordenar la matriz 
-    filas = len(matriz)
-    columnas = len(matriz[0])
-    print("\n--- Tablero actualizado ---")
-    print("     ", end="")
-    for i in range(65, 65 + columnas):  # Cambié 73 por 65 + columnas para que se ajuste al tamaño
-        print(chr(i), end=" ")
-    print()
-	 for x in range(filas):
-	        if x >= 9:
-	            print(x + 1, end="   ")
-	        else:
-	            print(x + 1 , end="    ")
-	        for y in range(columnas):
-	            if x == fila and y == columna:
-	                minas_cerca = contar_minas_alrededor(matriz, fila, columna)
-	                print(minas_cerca, end=" ")
-	            else:
-	                print("□", end=" ")
-	        print()
-
-```
-
-Posteriormente se utiliza una función que evalua dato ingresado, verificando si es un digito o no:
-
-```
-	def es_numero(valor):
-	        for caracter in valor:
-	            if caracter < '0' or caracter > '9':
-	             return False
-	        return True
-```
-
-Para hacer el filtro de ingreso de datos y estar seguros de que las coordenadas ingresadas son correctas se usa esta funcion:
-
-```
-def verificar_coordenada(matriz):
-    filas = len(matriz)
-    columnas = len(matriz[0])
-
-    while True:
-        # Pedir la coordenada en un solo input
-        entrada = input("Ingrese la coordenada (entre 1-" + str(filas) + "y A-" + chr(64 + columnas) + "): ").upper()
-
-        # Separar la entrada en fila y columna
-        partes = entrada.split()
-        if len(partes) != 2:
-            print("Formato incorrecto. Debe ser 'fila columna'. Intenta nuevamente.")
-            continue
-
-        fila_txt, columna_txt = partes
-
-        # Verificar la fila
-        if es_numero(fila_txt) == False:
-            print("Fila no es un número válido, intenta nuevamente.")
-            continue
-
-        fila = int(fila_txt) - 1
-        if fila < 0 or fila >= filas:
-            print("Fila fuera de rango, intenta nuevamente.")
-            continue
-
-        # Verificar la columna
-        if len(columna_txt) != 1 or not ('A' <= columna_txt <= chr(64 + columnas)):
-            print("Columna fuera de rango, intenta nuevamente.")
-            continue
-
-        columna = ord(columna_txt) - 65  # Convertir la letra a índice de columna
-
-        # Verificar si hay una mina en la posición
-        if matriz[fila][columna] == 1:
-            print("\n ¡BOOOM! Has encontrado una mina. 🔥☠️")
-            return False  # Fin del juego
-        else:
-            print("\n No hay mina. Puedes seguir jugando. 👀👌")
-            mostrar_tablero_actualizado(matriz, fila, columna)
-            return True  # Continuar jugando
-```
-
-Al final se imprime la interfaz y se llaman las funciones
-
-```
-print("------------------------------------------")
-print("--BIENVENIDO AL  BUSCAMINAS STRAVAGANTE--")
-print("------------------------------------------")
-tamano = int(input("--Tamaño del tablero: "))  # Pedimos al usuario el tamaño y la cantidad de minas
-minas = int(input("--Cantidad de minas: "))
-print("------------------------------------------")
-
-# Generamos el tablero y mostramos el resultado
-matriz = generar_tablero(tamano, minas)
-tablerito(tamano, matriz)
-print("Las minas colocadas son =", minas)
-```
-
-Este bucle hace que el proceso se repita hasta que el jugador ingrese una mina=
-
-```
-# Bucle principal del juego
-while True:
-    if verificar_coordenada(matriz) == False:
-        break  # Fin del juego si se encuentra una mina
-```
 
 ### 3. Implementación
 El código se construyó en Python utilizando algunas de las siguientes herramientas y técnicas:
@@ -555,6 +432,8 @@ Este valor se usa para reducir la puntuación del jugador a medida que pasa el t
 `mostrar_tablero` Para mostrar el tablero en la consola.
 
 `despejar_casilla` Para despejar casillas y sus adyacentes.
+
+`menu` Función que permite la navehación del usuario en la interfaz.
 
 `jugar` Función principal que maneja la lógica del juego.
 
