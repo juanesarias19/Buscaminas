@@ -16,10 +16,6 @@
 ## 📌 Objetivo
 El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consistir de una interfaz simple y facil de entender, debe implemenatar a si mismo una lógica de juego correcta y  desarrollar una versión completamente funcional.
 
-
-## 📌 Objetivo del avance
-El avance del proyecto tiene como objetivo principal asegurar un desarrollo estructurado y eficiente, comenzando con una planeación detallada que establece los pasos necesarios para alcanzar la meta propuesta. Actualmente, se ha trabajado en la creación de la interfaz y la implementación de las funciones básicas, priorizando un diseño intuitivo y funcional que facilite la experiencia del usuario. Durante el desarrollo, se han identificado diversos obstáculos y dificultades, tales como la integración de ciertos componentes, los cuales requieren un enfoque más profundo para garantizar la funcionalidad del sistema.
-
 ---
 
 <table cellspacing="1" bgcolor="">
@@ -110,16 +106,22 @@ El Buscaminas es un juego de lógica en el que debes descubrir todas las casilla
 
 ▶ Victoria: Ganas si descubres todas las casillas sin minas.
 
-## 📌 3. Posibles Desafíos
+## 📌 3. ¿Como se abordo la solucion de crear un buscaminas en python?
 
-En la planeación y la realización parcial del proyecto, fueron hallados y pensados algunos obstaculos y desafios, que podrían llegar a requerir más esfuerzo o atención en el futuro, tales como:
-* Lógica para la expansión de casillas vacías al hacer clic.
-* Gestión de eventos y actualizaciones gráficas en la interfaz.
-* Validación de condiciones de victoria y derrota
-* Programacion del Temporizador
-* Conteo de puntaje
+### 1. Análisis del Problema
+Primero, se identificaron los requisitos básicos del juego de Buscaminas:
 
-## ¿Como se abordo la solucion de crear un buscaminas en python?
+* **Tablero:** Un tablero de tamaño variable con casillas que pueden contener minas o números que indican el numero de minas adyacentes.
+
+* **Minas:** Un número determinado de minas ubicadas de manera aleatoria en el tablero.
+
+* **Interacción del Usuario:** El jugador debe poder seleccionar casillas para despejarlas o marcarlas como minas.
+
+* **Victoria/Derrota:** El jugador gana si despeja todas las casillas sin minas y pierde si selecciona una casilla con mina.
+
+* **Puntuación:** Un sistema de puntuación basado en el tiempo y el número de minas.
+
+### 2. Diseño de la Solución
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
 
 <p align="center">
@@ -152,17 +154,18 @@ La base del codigo consiste en crear una matriz base a las minas asignamos el va
     return matriz  # Devolvemos la matriz con las minas
 ```
 
-Para la ubicación de minas fue necesario importar una funcion de la biblioteca `NumPy`
+Para la ubicación de minas se utilizó el modulo `random`
 
 ```
-import numpy as np
-
-# Obtener índices aleatorios para colocar las minas
-    indices = np.random.choice(tamano * tamano, minas, replace=False)
+ejemplo aqui
 ```
 
-_`replace=False` indica que no se deben seleccionar índices repetidos. Esto Esto garantiza que solo puede existir una mina por celda._
+Interfaz de Usuario
+* Se diseñó una interfaz de texto para la consola.
 
+* Se utilizaron coordenadas (letras para columnas y números para filas) para que el usuario seleccione casillas.
+
+* Se implementó un sistema para marcar casillas como minas usando el formato M A1.
 
 Esta funcion imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
 
@@ -186,6 +189,13 @@ Esta funcion imprime la interfaz del juego  para que  se vea acorde a un sistema
         print()
     return tablerito
 ```
+
+Lógica del Juego
+* Se implementó una función recursiva (despejar_casilla) para despejar casillas vacías y sus adyacentes automáticamente.
+
+* Se verificó si el jugador ganó al despejar todas las casillas sin minas.
+
+* Se manejó la condición de derrota cuando el jugador selecciona una casilla con mina.
 
 Para contar las minas adyacentes usamos la siguiente función
 
