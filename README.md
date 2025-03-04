@@ -124,6 +124,13 @@ Primero, se identificaron los requisitos básicos del juego de Buscaminas:
 * **Puntuación:** Un sistema de puntuación basado en el tiempo y el número de minas.
 
 ### 2. Diseño de la Solución
+
+<details><summary> Diagrama de flujo del funcionamiento </summary><p>
+	
+![Flujo del buscaminas 1](https://github.com/user-attachments/assets/c256f3df-bf25-4065-baa7-a4e63e849c5b)
+
+</p></details><br>  
+
 **Estructura del tablero**
 Partimos desde el hecho de que el funcionamiento de un buscaminas se relaciona con las matrices en python; para jugar un buscaminas es necesario tener una tablero de bloques que forman filas y columnas, ahí es donde se encuentran las minas. 
 
@@ -157,14 +164,88 @@ La base del codigo consiste en crear una matriz base a las minas asignamos el va
     return matriz  # Devolvemos la matriz con las minas
 ```
 
-Para la ubicación de minas se utilizó el modulo `random`
+* Para la ubicación de minas se utilizó el modulo `random`
 
 ```
-ejemplo aqui
+# Obtener ubicación aleatoria para colocar las minas usando random.sample
+    indices = random.sample(range(tamano * tamano), minas) #Son numeros aleatorios que dterminan las posiciones de las minas 
 ```
 
 **Interfaz de Usuario**
 * Se diseñó una interfaz de texto para la consola.
+
+<p align="center">
+  ![image](https://github.com/user-attachments/assets/032498c4-eee5-4634-b5b2-602327a3253b)
+</p>
+
+<details><summary> Codigo</summary><p>
+  
+```
+def mostrar_menu():
+   
+    print("                                          ")
+    print("  ┌────────────────────────────────────┐  ")
+    print("  │BIENVENIDO AL BUSCAMINAS STRAVAGANTE│  ")
+    print("  └────────────────────────────────────┘  ")
+    print("                                          ")
+    print("  ┌────────────────────────────────────┐  ")
+    print("  │>1.             Jugar               │  ")
+    print("  │>2.          Instrucciones          │  ")
+    print("  │>3.             Salir               │  ")
+    print("  └────────────────────────────────────┘  ")
+```
+</p></details><br>
+
+
+* Se añadió una opción de instrucciones.
+
+<p align="center">
+  ![image](https://github.com/user-attachments/assets/8421f34e-261b-4ce7-b40a-92d7beec901a)
+</p>
+
+<details><summary> Codigo </summary><p>
+
+```
+def mostrar_instrucciones():
+    print("                                          ") 
+    print("  ┌────────────────────────────────────┐  ")
+    print("  │    INSTRUCCIONES DE BUSCAMINAS     │  ")
+    print("  └────────────────────────────────────┘  ")
+    print("                                          ")   
+    print("──────────────────────────────────────────") 
+    print("                                          ")   
+    print("  ┌────────────────────────────────────┐  ")
+    print("  │            ¿COMO JUGAR?            │  ")
+    print("  │1.Coordenadas:                      │  ")  
+    print("  │ -Las columnas son letras(A,B,C,..) │  ")  
+    print("  │  y las filas son números(1,2,3,..) │  ") 
+    print("  │                                    │  ") 
+    print("  │2.Despejar casillas:                │  ") 
+    print("  │ -Ingresa la coordenada Letra-Número│  ")
+    print("  │  para despejar la casilla (ej. A1).│  ")
+    print("  │ -Si aparece un número, indica      │  ") 
+    print("  │  cuántas minas hay alrededor.      │  ") 
+    print("  │ -Si está vacía, se despejarán      │  ") 
+    print("  │  automáticamente las casillas      │  ") 
+    print("  │  adyacentes.                       │  ") 
+    print("  │                                    │  ") 
+    print("  │3.Marcar las minas:                 │  ") 
+    print("  │ -Si sospechas que hay una mina     │  ")     
+    print("  │  márcala con                       │  ") 
+    print("  │  M-Letra-Número (ej. M A1)         │  ") 
+    print("  │ -Desmarcala con el mismo comando   │  ") 
+    print("  │ -Usa los números para deducir      │  ") 
+    print("  │  dónde están las minas             │  ") 
+    print("  │                                    │  ") 
+    print("  │             ¡CUIDADO!              │  ") 
+    print("  │Seleccionar una mina acaba el juego │  ") 
+    print("  │                                    │  ") 
+    print("  │           ¡BUENA SUERTE!           │  ") 
+    print("  └────────────────────────────────────┘  ")
+```
+	
+</p></details><br>  
+
 
 * Se utilizaron coordenadas (letras para columnas y números para filas) para que el usuario seleccione casillas.
 
