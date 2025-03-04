@@ -383,6 +383,29 @@ ganado = True
 ```
 </p></details><br>  
 
+* Se estableció un sistema de puntuación dinamica.
+  
+<details><summary> Sitema de puntuación </summary><p
+
+```
+puntuacion = 1000 * minas  # Puntuación inicial basada en el número de minas
+    minas_restantes = minas  # Contador de minas restantes
+
+    # Bucle principal del juego
+    while True:
+        limpiar_consola()  # Esta funcion limpia la consola en cada iteración
+
+        # Mostrar información del juego
+        tiempo_transcurrido = int(time.time() - inicio_tiempo)
+        print("Tiempo transcurrido:",tiempo_transcurrido, "segundos")
+        print("Puntuación: ",max(0, puntuacion - tiempo_transcurrido * 10))  # Puntuación disminuye con el tiempo
+        print("Minas restantes:",minas_restantes)
+        #Esta funcion es la parte grafica del juego que muestra el tablero 
+        mostrar_tablero(tablero, visible, marcadas)
+```
+
+</p></details><br>  
+
 ---
 ---
 
