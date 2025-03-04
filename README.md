@@ -168,12 +168,7 @@ La base del codigo consiste en crear una matriz base a las minas asignamos el va
     return matriz  # Devolvemos la matriz con las minas
 ```
 
-* Para la ubicación de minas se utilizó el modulo `random`
-
-```
-# Obtener ubicación aleatoria para colocar las minas usando random.sample
-    indices = random.sample(range(tamano * tamano), minas) #Son numeros aleatorios que dterminan las posiciones de las minas 
-```
+*Para la ubicación de minas se utilizó el modulo* `random`
 
 ___
 
@@ -338,8 +333,9 @@ def despejar_casilla(tablero, visible, fila, columna):
 * Se verificó si el jugador ganó al despejar todas las casillas sin minas.
 
 <details><summary> Codigo </summary><p>
-  
+
 ```
+
 ganado = True
         for fila in range(tamano):
             for columna in range(tamano):
@@ -359,35 +355,38 @@ ganado = True
             input("Presiona Enter para volver al menú...")
             return
 ```
+
 </p></details><br>  
+
 
 * Se manejó la condición de derrota cuando el jugador selecciona una casilla con mina.
 
-<details><summary> Codigo </summary><p
-					    
+<details><summary> Codigo </summary><p>
+
 ```
-  if tablero[fila][columna] == -1:
+if tablero[fila][columna] == -1:
 
-                print("                                          ")
-                print("  ┌────────────────────────────────────┐  ")
-                print("  │          PISASTE UNA MINA          │  ")
-                print("  │           FIN DEL JUEGO            │  ")
-                print("  └────────────────────────────────────┘  ")
-                print("                                          ")
-                mostrar_tablero(tablero, visible, marcadas, mostrar_minas=True)
-                input("Presiona Enter para volver al menú...")
-                return
+	print("                                          ")
+	print("  ┌────────────────────────────────────┐  ")
+	print("  │          PISASTE UNA MINA          │  ")
+	print("  │           FIN DEL JUEGO            │  ")
+	print("  └────────────────────────────────────┘  ")
+	print("                                          ")
+	mostrar_tablero(tablero, visible, marcadas, mostrar_minas=True)
+	input("Presiona Enter para volver al menú...")
+	return
 
-            # Se llama la funcion para despejar casillas 
-            despejar_casilla(tablero, visible, fila, columna)
+	# Se llama la funcion para despejar casillas 
+	despejar_casilla(tablero, visible, fila, columna)
 ```
 </p></details><br>  
 
 * Se estableció un sistema de puntuación dinamica.
-  
-<details><summary> Sitema de puntuación </summary><p
 
+<details><summary> Sitema de puntuación </summary><p>
+							  
 ```
+
 puntuacion = 1000 * minas  # Puntuación inicial basada en el número de minas
     minas_restantes = minas  # Contador de minas restantes
 
@@ -479,4 +478,4 @@ El resultado fue un juego de Buscaminas funcional y entretenido, implementado co
 * Condiciones claras de victoria y derrota.
 
 
-
+*Este se encientra en un <a href="https://github.com/juanesarias19/Buscaminas/blob/main/Buscaminas_definitivo.py">archivo</a> adjunto a este repo: `Buscaminas_definitivo.py`
