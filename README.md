@@ -33,7 +33,7 @@ El proyecto tiene como objetivo el desarrollo de un Buscaminas, este debe consis
   </tr>
 </table>
 
-## Diagrama preliminar
+## 📌 Diagrama preliminar
 
 Para describir el proceso y facilitar el desarrollo del algoritmo se optó por realizar un diagrama de flujo que resume el funcionamiento básico del juego, desde el inicio, determinar si se gana o pierde, o el resultado de una casilla vacía. 
 
@@ -62,7 +62,7 @@ flowchart TD
 ```
 </p></details><br>
 
-
+<!--
 ## 📌 2. Mecánica de Juego
 
 El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
@@ -106,7 +106,9 @@ El Buscaminas es un juego de lógica en el que debes descubrir todas las casilla
 
 ▶ Victoria: Ganas si descubres todas las casillas sin minas.
 
-## 📌 3. ¿Como se abordo la solucion de crear un buscaminas en python?
+-->
+
+## 📌¿Como se abordo la solucion de crear un buscaminas en python?
 
 ### 1. Análisis del Problema
 Primero, se identificaron los requisitos básicos del juego de Buscaminas:
@@ -165,9 +167,7 @@ Interfaz de Usuario
 
 * Se utilizaron coordenadas (letras para columnas y números para filas) para que el usuario seleccione casillas.
 
-* Se implementó un sistema para marcar casillas como minas usando el formato M A1.
-
-Esta funcion imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
+Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
 
 ```
     def tablerito(columnas, matriz):
@@ -189,6 +189,10 @@ Esta funcion imprime la interfaz del juego  para que  se vea acorde a un sistema
         print()
     return tablerito
 ```
+
+* Se implementó un sistema para marcar casillas como minas usando el formato M A1.
+
+  
 
 Lógica del Juego
 * Se implementó una función recursiva (despejar_casilla) para despejar casillas vacías y sus adyacentes automáticamente.
@@ -321,9 +325,72 @@ while True:
         break  # Fin del juego si se encuentra una mina
 ```
 
+### 3. Implementación
+El código se construyó en Python utilizando algunas de las siguientes herramientas y técnicas:
 
-**Nota:** Esto es solo un avance del proyecto, este se encuentra anexado al principio del repositorio
+* **Módulos:**
 
+`import random`
+<details><summary> Para la generación aleatoria de minas.</summary><p>
+
+Se usa `random.sample` para seleccionar posiciones aleatorias en el tablero donde se colocarán las minas.
+```
+indices = random.sample(range(tamano * tamano), minas)
+```
+
+Aquí, `random.sample` elige minas números únicos de un rango de 0 a tamano * tamano - 1, que representan las posiciones de las minas.
+
+</p></details><br>
+
+`import os` 
+<details><summary> Para limpiar la consola y mejorar la experiencia del usuario.</summary><p>
+
+El módulo `os` proporciona funciones para interactuar con el sistema operativo. En este código, se usa principalmente para limpiar la consola y mejorar la experiencia del usuario.
+
+```
+os.system('cls' if os.name == 'nt' else 'clear')
+```
+
+`os.name` Devuelve el nombre del sistema operativo ('nt' para Windows)
+
+`cls` Comando para limpiar la consola en Windows.
+</p></details><br>
+
+`import time` 
+<details><summary>Para medir el tiempo transcurrido y calcular la puntuación. </summary><p>
+
+Se usa `time` para trabajar con funciones relacionadas con el tiempo. En este código, se usa para medir el tiempo transcurrido durante el juego y calcular la puntuación.
+
+* Medición del tiempo: En la función `jugar`, se usa `time.time()` para obtener el tiempo actual en segundos.
+```
+inicio_tiempo = time.time()
+```
+Luego, se calcula el tiempo transcurrido restando el tiempo inicial del tiempo actual:
+
+```
+tiempo_transcurrido = int(time.time() - inicio_tiempo)
+```
+Este valor se usa para reducir la puntuación del jugador a medida que pasa el tiempo.
+</p></details><br>
+
+* **Funciones principales:**
+
+`generar_tablero` Para crear el tablero con minas y números.
+
+`mostrar_tablero` Para mostrar el tablero en la consola.
+
+`despejar_casilla` Para despejar casillas y sus adyacentes.
+
+`jugar` Función principal que maneja la lógica del juego.
+
+
+### 5. Resultado Final
+El resultado fue un juego de Buscaminas funcional y entretenido, implementado completamente en Python. El juego incluye:
+
+* Tableros personalizables.
+* Un sistema de puntuación dinámico.
+* Una interfaz de usuario intuitiva.
+* Condiciones claras de victoria y derrota.
 
 
 
