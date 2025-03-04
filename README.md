@@ -174,9 +174,8 @@ La base del codigo consiste en crear una matriz base a las minas asignamos el va
 **Interfaz de Usuario**
 * Se diseñó una interfaz de texto para la consola.
 
-<p align="center">
   ![image](https://github.com/user-attachments/assets/032498c4-eee5-4634-b5b2-602327a3253b)
-</p>
+
 
 <details><summary> Codigo</summary><p>
   
@@ -199,9 +198,7 @@ def mostrar_menu():
 
 * Se añadió una opción de instrucciones.
 
-<p align="center">
   ![image](https://github.com/user-attachments/assets/8421f34e-261b-4ce7-b40a-92d7beec901a)
-</p>
 
 <details><summary> Codigo </summary><p>
 
@@ -249,6 +246,10 @@ def mostrar_instrucciones():
 
 * Se utilizaron coordenadas (letras para columnas y números para filas) para que el usuario seleccione casillas.
 
+![image](https://github.com/user-attachments/assets/1d47fefc-b430-45b2-9837-923260ab2abf)
+
+<details><summary> Codigo </summary><p>
+
 Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
 
 ```
@@ -271,17 +272,109 @@ Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde 
         print()
     return tablerito
 ```
+</p></details><br>  
 
 * Se implementó un sistema para marcar casillas como minas usando el formato M A1.
 
-  
+![image](https://github.com/user-attachments/assets/d4bcfb5e-6aac-4820-b9b2-70f45324d1cf)
 
-Lógica del Juego
-* Se implementó una función recursiva (despejar_casilla) para despejar casillas vacías y sus adyacentes automáticamente.
+<details><summary> Codigo </summary><p>
+
+```
+#En caso de que la entrada sea invalida
+        if len(entrada) < 1:
+            print("Entrada inválida. Usa el formato LetraNúmero (ej. A1) o M LetraNúmero (ej. M A1).")
+            continue
+        #Este if verifica que si M esta en la posicion 0 del string, es decir lo primero sera un comando para marcar una mina 
+        if entrada[0] == "M" and len(entrada) == 2:  # Marcar/desmarcar una mina
+            # Obtener la casilla a marcar
+            try: #
+                columna = ord(entrada[1][0]) - 65 #Convierte la letra de la columna en un índice numérico 
+                fila = int(entrada[1][1:]) - 1  #Convierte el número de la fila en un índice numérico 
+            except (ValueError, IndexError):
+                print("Formato inválido. Usa M LetraNúmero (ej. M A1).")
+                continue
+```
+
+</p></details><br>  
+ 
+
+**Lógica del Juego**
+* Se implementó una *función recursiva* `despejar_casilla` para despejar casillas vacías y sus adyacentes automáticamente.
+
+<details><summary> Función depejar casilla </summary><p>
+	
+```
+def despejar_casilla(tablero, visible, fila, columna):
+    #  si la casilla está dentro de los límites del tablero se puede continuar 
+    if fila < 0 or fila >= len(tablero) or columna < 0 or columna >= len(tablero[0]):
+        return
+
+    # Si la casilla ya está visible, no hacemos nada
+    if visible[fila][columna]:
+        return
+    # Se marca la casilla como visible
+    visible[fila][columna] = True
+
+    # Si la casilla es un 0, despejamos las casillas adyacentes
+    if tablero[fila][columna] == 0:
+        for i in range(-1, 2): #Se recorren las casillas al rededor 
+            for j in range(-1, 2):
+                # No llamamos a la función para la misma casilla
+                if i == 0 and j == 0:
+                    continue #Se usa la funcion de una manera recursiva para despejar las otras 
+                despejar_casilla(tablero, visible, fila + i, columna + j)
+```
+
+</p></details><br>  
 
 * Se verificó si el jugador ganó al despejar todas las casillas sin minas.
 
+<details><summary> Codigo </summary><p>
+  
+```
+ganado = True
+        for fila in range(tamano):
+            for columna in range(tamano):
+                if tablero[fila][columna] != -1 and not visible[fila][columna]:
+                    ganado = False
+                    break
+            if not ganado:
+                break
+
+        if ganado:
+            print("                                          ")
+            print("  ┌────────────────────────────────────┐  ")
+            print("  │      ¡FELICIADES! HAS GANADO       │  ")
+            print("  └────────────────────────────────────┘  ")
+            print("                                          ")
+
+            input("Presiona Enter para volver al menú...")
+            return
+```
+</p></details><br>  
+
 * Se manejó la condición de derrota cuando el jugador selecciona una casilla con mina.
+
+<details><summary> Codigo </summary><p
+					    
+```
+  if tablero[fila][columna] == -1:
+
+                print("                                          ")
+                print("  ┌────────────────────────────────────┐  ")
+                print("  │          PISASTE UNA MINA          │  ")
+                print("  │           FIN DEL JUEGO            │  ")
+                print("  └────────────────────────────────────┘  ")
+                print("                                          ")
+                mostrar_tablero(tablero, visible, marcadas, mostrar_minas=True)
+                input("Presiona Enter para volver al menú...")
+                return
+
+            # Se llama la funcion para despejar casillas 
+            despejar_casilla(tablero, visible, fila, columna)
+```
+</p></details><br>  
 
 Para contar las minas adyacentes usamos la siguiente función
 
