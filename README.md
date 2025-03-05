@@ -441,3 +441,13 @@ El resultado fue un juego de Buscaminas funcional y entretenido, implementado co
 
 
 *Este se encientra en un <a href="https://github.com/juanesarias19/Buscaminas/blob/main/Buscaminas_definitivo.py">archivo</a> adjunto a este repo: `Buscaminas_definitivo.py`
+
+
+## CONCLUSIÓN
+El buscaminas en su mecanica ejecutada por coordendas en una manera muy dinamica para aprender, ya que involucra las maneras de como tratar matrices y los desafios entre la interracion del jugador al momento de que el programa se ejecute. Ademas se pueden plasmar la mayoria de las ideas del buscaminas mediante el diagrama de flujo, paso importante para la explicacion de estos codigos.  
+
+
+El juego cumple con ser facil de entender ya que la interfaz del juego es clara, ademas de tener una seccion de instrucciones que le dan un plus muy fnuncional al juego.
+
+
+Durante el desarrollo del proyecto se afrontaron varios desafios relacionados con la mecanica del juego, estos desafios se pudieron superar aplicando el contenido aprendido durante este curso.
