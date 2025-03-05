@@ -431,7 +431,7 @@ Este valor se usa para reducir la puntuación del jugador a medida que pasa el t
 `jugar` Función principal que maneja la lógica del juego.
 
 
-### 5. Resultado Final
+### 4. Resultado Final
 El resultado fue un juego de Buscaminas funcional y entretenido, implementado completamente en Python. El juego incluye:
 
 * Tableros personalizables.
