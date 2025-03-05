@@ -62,51 +62,6 @@ flowchart TD
 ```
 </p></details><br>
 
-<!--
-## 📌 2. Mecánica de Juego
-
-El Buscaminas es un juego de lógica en el que debes descubrir todas las casillas vacías de un tablero sin detonar ninguna mina.
-
-
-<details><summary>Tablero y casillas: Se presenta una cuadrícula con casillas ocultas, algunas de las cuales contienen minas.</summary><p>
-
-* Creamos el tablero con una matriz, con la posibilidad de modificar el rango del tablero
-
-  ![image](https://github.com/user-attachments/assets/efe6fb7e-a773-489a-bda7-a7cdb0e43129)
-
-
-* Añadimos Un random para minas aleatorias en la matriz
-
-
-</p></details><br>
-<details><summary>Iniciar partida: primer casilla </summary><p>
-
-— Para ejecución en consola se tenían dos opciones
-
-  * Inciar en una posición y desplazarnos por el tablero
-  * Coordenadas para ubicar las posiciones
-
-![image](https://github.com/user-attachments/assets/6cfb66be-fbab-4bdf-9f7f-1fe65cded9c0)
-
-</p></details><br>
-
-<details><summary>Descubrir casilla: Al hacer clic en una casilla, puede ocurrir una de dos cosas:</summary><p>
-
-* ###  Casilla vacía, indica cuántas minas hay en las casillas adyacentes.
-
-![Captura de pantalla 2025-01-29 103402](https://github.com/user-attachments/assets/ffa89a63-5e62-4d47-aa5c-a035ee9f7f3e)
-
-* ###  Mina, pierdes la partida.
-
-![image](https://github.com/user-attachments/assets/4aecdb59-3e90-4d8f-9a46-704854a35dad)
-
-</p></details><br>
-
-▶ Estrategia y lógica: Usando los números revelados, debes deducir dónde están las minas y marcarlas con banderas.
-
-▶ Victoria: Ganas si descubres todas las casillas sin minas.
-
--->
 
 ## 📌¿Como se abordo la solucion de crear un buscaminas en python?
 
@@ -251,27 +206,34 @@ def mostrar_instrucciones():
 
 <details><summary> Codigo </summary><p>
 
-Esta funcion `tablerito` imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
+Esta funcion `mostar_tablero` imprime la interfaz del juego  para que  se vea acorde a un sistema de coordenadas. 
 
 ```
-    def tablerito(columnas, matriz):
-      print("     ", end="") 
-     for i in range(65, 65 + columnas):  # Cambié 73 por 65 + columnas para que se ajuste al tamaño
-        print(chr(i), end=" ")
+    #Esta funcion se encarga de toda la parte grafica del juego
+def mostrar_tablero(tablero, visible, marcadas, mostrar_minas=False):
+    # Mostrar la fila de letras 
+    print("   ", end="")
+    for i in range(len(tablero)): 
+        print(chr(65 + i), end=" ") #se usa el codigo ASCII para esto
     print()
 
-    for i in range(1, columnas + 1):
-        if i > 9:
-            print(i, end="   ")
-        else:
-            print(i, end="    ")
-        for j in range(columnas):
-            if matriz[i - 1][j] == 1:
-                print("1", end=" ")  # Representa una mina
+    # Mostrar el tablero con las casillas visibles y marcadas
+    for fila in range(len(tablero)):
+        print(f"{fila + 1:<2}", end=" ")
+        for columna in range(len(tablero[fila])):
+            if marcadas[fila][columna]:
+                print("🪦", end=" ")  # ESte emoji es para marcar una mina 
+            elif visible[fila][columna] or (mostrar_minas and tablero[fila][columna] == -1):
+                if tablero[fila][columna] == -1:
+                    print("X", end=" ") #si es -1 imprime una X que signiifica una mina 
+                elif tablero[fila][columna] == 0:
+                    print(" ", end=" ")  # Si es 0 imprime un espacio ya que es 0 significa que no hay mina 
+                else:
+                    print(tablero[fila][columna], end=" ")# Muestra el número de minas cercanas
             else:
-                print("□", end=" ")  # Representa un espacio vacío
+                print("·", end=" ") #imprime puntos 
         print()
-    return tablerito
+
 ```
 </p></details><br>  
 
